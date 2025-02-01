@@ -251,7 +251,7 @@ export default function LearnPage() {
                 >
                   <ReactMarkdown
                     components={{
-                      code({ node, inline, className, children, ...props }) {
+                      code({ node, inline = false, className, children, ...props }: { node?: any; inline?: boolean; className?: string; children?: React.ReactNode }) {
                           const match = /language-(\w+)/.exec(className || '');
                           return !inline && match ? (
                           <pre className="bg-gray-800 text-white p-2 rounded-md overflow-x-auto">
